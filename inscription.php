@@ -68,8 +68,8 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
         <label for="nom">Nom</label>
         <input type="text" id="nom" name="nom" required>
 
-        <label for="login">Email</label>
-        <input type="email" id="login" name="login" required>
+        <label for="login">Login</label>
+        <input type="email" id="login" name="login" required placeholder="exemple@gmail.com">
 
         <label for="password">Mot de passe</label>
         <input type="password" id="password" name="password" required>

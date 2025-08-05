@@ -27,9 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Variables de session
         $_SESSION['id'] = $user['id'];
-        $_SESSION['role'] = ($user['role'] === 'admin') ? true : false;
+        $_SESSION['admin'] = ($user['role'] === 'admin') ? true : false;
 
-        if ($_SESSION['role']) {
+        if ($_SESSION['admin']) {
             header('Location: admin.php');
             exit;
         } else {
@@ -65,8 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <h1>Connexion</h1>
     <form action="connexion.php" method="POST" class="form-box">
-      <label for="login">Email</label>
-      <input type="email" id="login" name="login" required>
+      <label for="login">Login</label>
+      <input type="email" id="login" name="login" required placeholder="exemple@gmail.com">
 
       <label for="password">Mot de passe</label>
       <input type="password" id="password" name="password" required>

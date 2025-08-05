@@ -1,0 +1,5 @@
+.env
+# config/db.php
+config/
+# uploads images
+uploads/

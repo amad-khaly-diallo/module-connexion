@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+$displayProfile = isset($_SESSION['id']) ? true : false;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./stylesheet/style.css">
+  <link rel="stylesheet" href="./stylesheet/header.css">
   <title>Document</title>
 </head>
 
@@ -13,9 +21,12 @@
     <nav class="nav-bar">
       <span class="logo">PHP</span>
       <ul class="nav-links">
-        <li class="link active"><a href="index.php">Home</a></li>
-        <li class="link"><a href="connexion.php">Login</a></li>
-        <li class="link"><a href="inscription.php">signup</a></li>
+        <?php if ($displayProfile): ?>
+          <li class="link"><a href="profile.php">profile</a></li>
+        <?php else: ?>
+          <li class="link"><a href="connexion.php">Login</a></li>
+          <li class="link"><a href="inscription.php">signup</a></li>
+        <?php endif;?>
       </ul>
     </nav>
   </header>
